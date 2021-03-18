@@ -21,6 +21,9 @@ a {text-decoration: none;}
 .display-none {
     display: none;
 }
+.active {
+    color: var(--color-green);
+}
 
 :root {
     --color-background: #121214;
@@ -43,12 +46,14 @@ body {
     width: 100%;
     height: 70px;
     display: flex;
+    background-color: var(--color-primary);
 }
 
 /* ----------Nav Desktop---------- */
 .nav-desktop {
     align-items: center;
 }
+
 .logo-desktop,
 .menu-desktop ul {
     display: flex;
@@ -70,11 +75,17 @@ body {
 
 .menu-desktop ul li {
     margin-left: 20px;
+    height: 100%;
 }
 
 .menu-desktop ul li a {
-    color: var(--color-black);
+    color: var(--color-white);
     text-transform: uppercase;
+    padding: 10px;
+    transition: all .5s linear;
+}
+.menu-desktop ul li a:hover {
+    color: var(--color-green);
 }
 
 @media screen and (max-width:768px) {
@@ -159,9 +170,16 @@ body {
     text-align: center;
 }
 .menu-mobile ul .icons a {
-    color: var(--color-white);
     margin-left: 20px;
     padding: 10px;
+}
+.menu-mobile ul .icons i {
+    color: var(--color-white);
+    transition: all .5s linear
+}
+
+.menu-mobile ul .icons i:hover {
+    color: var(--color-green);
 }
 
 .close {
@@ -183,5 +201,63 @@ body {
 
     .header {
         align-items: s;
+    }
+}
+
+
+/* ----------Banner---------- */
+.banner {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner-info {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+.banner-info img {
+    display: none;
+}
+.banner-info h2,
+.banner-info h3 {
+    margin-bottom: 20px;
+}
+.banner-info h2 {
+    font-size: 30px;
+}
+#btn-banner {
+    width: 300px;
+    height: 40px;
+    background-color: var(--color-primary-hover);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#btn-banner:hover {
+    background-color: var(--color-primary-hover);
+}
+
+@media screen and (max-width: 768px) {
+    .banner-info {
+        flex: 1;
+    }
+    .banner-info img {
+        width: 400px;
+        margin-bottom: 50px;
+        display: block;
     }
 }

@@ -18,4 +18,24 @@ window.onload = () => {
     function hide() {
         menu.style.left = '100%';
     }
+
+    let banner = document.querySelector('.banner');
+    let viewWidth = window.innerWidth;
+
+    if(viewWidth > 768) {
+        banner.style.backgroundImage = "url('assets/img/bg-banner-desktop.png')";
+    } else {
+        banner.style.backgroundImage = "none";
+    }
 }
+
+let viewWidth = window.innerWidth;
+let banner = document.querySelector('.banner');
+window.addEventListener('resize', function() {
+    viewWidth = window.innerWidth;
+    if(viewWidth > 768) {
+        banner.style.backgroundImage = "url('assets/img/bg-banner-desktop.png')";
+    } else {
+        banner.style.backgroundImage = "none";
+    }
+});
