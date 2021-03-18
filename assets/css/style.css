@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul {list-style: none;}
+a {text-decoration: none;}
 
 /* BOT CSS */
 .container {
@@ -11,6 +13,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2%;
+    display: flex;
 }
 .display-block {
     display: block;
@@ -43,3 +46,42 @@ body {
     background-color: var(--color-white);
     font-family: 'Audiowide', cursive;
 }
+.header,
+.nav-desktop {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* ----------Nav Desktop---------- */
+.logo-desktop,
+.menu-desktop ul {
+    display: flex;
+}
+.logo-desktop {
+    width: 200px;
+    justify-content: flex-start;
+}
+.logo-desktop img {
+    width: 50px;
+    height: 25px;
+}
+
+.menu-desktop,
+.menu-desktop ul {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu-desktop ul li {
+    margin-left: 20px;
+}
+
+.menu-desktop ul li a {
+    color: var(--color-black);
+}
+
+
+
+/* ----------Nav Mobile---------- */
