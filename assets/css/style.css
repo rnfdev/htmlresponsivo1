@@ -39,7 +39,7 @@ a {text-decoration: none;}
 body {
     background-color: var(--color-white);
     font-family: 'Audiowide', cursive;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .header,
 .nav-desktop {
@@ -205,7 +205,7 @@ body {
 }
 
 
-/* ----------Banner---------- */
+/* ---------- Section Banner---------- */
 .banner {
     width: 100vw;
     height: calc(100vh - 70px);
@@ -256,8 +256,35 @@ body {
         flex: 1;
     }
     .banner-info img {
-        width: 400px;
+        width: 250px;
         margin-bottom: 50px;
         display: block;
+    }
+}
+
+/* ----------Section Potfólio---------- */
+.portfolio {
+    width: 100vw;
+    display: flex;
+    background-color: var(--color-primary);
+    padding: 50px;
+}
+
+.box-portfolio {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio > .container {
+        flex-direction: column;
+    }
+    .box-portfolio {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
     }
 }
