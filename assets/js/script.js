@@ -12,10 +12,10 @@ window.onload = () => {
 
     function show() {
         menu.style.display = 'flex';
-        menu.style.top = '0';
+        menu.style.left = '0';
     }
 
     function hide() {
-        menu.style.top = '-100%';
+        menu.style.left = '100%';
     }
 }

@@ -36,6 +36,7 @@ a {text-decoration: none;}
 body {
     background-color: var(--color-white);
     font-family: 'Audiowide', cursive;
+    overflow: hidden;
 }
 .header,
 .nav-desktop {
@@ -113,16 +114,19 @@ body {
     width: 50px;
 }
 
-.toggle i {
+.toggle {
     height: 70px;
-    color: var(--color-white);
+    cursor: pointer;
+}
+.toggle img{
+    width: 30px;
     cursor: pointer;
 }
 .menu-mobile {
     position: absolute;
     top: 0;
     left: 0;
-    transition: top .5s linear;
+    transition: all .5s linear;
 }
 .menu-mobile ul {
     height: 100vh;
@@ -131,6 +135,10 @@ body {
     z-index: 99;
     justify-content: center;
     align-items: center;
+}
+.menu-mobile ul img {
+    width: 100px;
+    margin-bottom: 30px;
 }
 .menu-mobile ul li {
     width: 100%;
@@ -143,6 +151,17 @@ body {
 .menu-mobile ul li a {
     color: var(--color-white);
     text-transform: uppercase;
+}
+
+.menu-mobile ul .icons {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.menu-mobile ul .icons a {
+    color: var(--color-white);
+    margin-left: 20px;
+    padding: 10px;
 }
 
 .close {
