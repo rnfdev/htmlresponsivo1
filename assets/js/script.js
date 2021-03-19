@@ -19,6 +19,7 @@ window.onload = () => {
         menu.style.left = '100%';
     }
 
+    // Banner
     let banner = document.querySelector('.banner');
     let viewWidth = window.innerWidth;
 
@@ -29,6 +30,8 @@ window.onload = () => {
     }
 }
 
+
+// Banner
 let viewWidth = window.innerWidth;
 let banner = document.querySelector('.banner');
 window.addEventListener('resize', function() {
@@ -37,5 +40,24 @@ window.addEventListener('resize', function() {
         banner.style.backgroundImage = "url('assets/img/bg-banner-desktop.png')";
     } else {
         banner.style.backgroundImage = "none";
+    }
+});
+
+// Contato
+let btnEnviar = document.querySelector('#btn-enviar');
+let aviso = document.querySelector('#aviso');
+let warning = document.querySelector('#warning');
+
+btnEnviar.addEventListener('click', function(e) {
+    e.preventDefault();
+    let msg = document.querySelector('#mensagem').value;
+
+    if(msg === '') {
+        warning.classList.remove('display-none');
+        setTimeout(() => {
+            warning.classList.add('display-none');
+        }, 3000);
+    } else {
+        window.location.href = `https://wa.me/5585988757519?text=${msg}`;
     }
 });

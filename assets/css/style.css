@@ -318,3 +318,114 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* ----------Section Servicos---------- */
+.servicos {
+    width: 100%;
+    display: flex;
+}
+
+.servico-left,
+.servico-right {
+    display: flex;
+    flex: 1;
+}
+
+.servico-left {
+    padding: 20px 0 0 20px
+}
+
+.servico-right {
+    padding: 20px 20px 0 0;
+    flex-direction: column;
+    align-items: center;
+}
+.servico-right p {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .servico-left {
+        display: none;
+    }
+    .servico-right {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .servico-right iframe {
+        width: 100%;
+    }
+}
+
+
+/* ----------Divisor---------- */
+.divisor {
+    width: 100vw;
+    height: 100px;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisor h2 {
+    color: var(--color-white);
+}
+
+/* ----------Contato---------- */
+.contato {
+    width: 100vw;
+    display: flex;
+}
+.contato > .container {
+    justify-content: center;
+}
+.contact-form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.contact-form h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+#mensagem {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--color-primary);
+}
+
+#btn-enviar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .5s linear;
+}
+#btn-enviar:hover {
+    background-color: var(--color-primary-hover);
+}
+
+#warning {
+    color: var(--color-red);
+    font-size: 14px;
+    animation: animate .5s linear;
+}
+@keyframes animate {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
