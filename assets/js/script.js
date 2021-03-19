@@ -115,7 +115,7 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Contato
+// Contato via Whatsapp
 const btnEnviar = document.querySelector('#btn-enviar');
 const aviso = document.querySelector('#aviso');
 const warning = document.querySelector('#warning');
