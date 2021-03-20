@@ -39,7 +39,7 @@ function getWidthDocument() {
     let width = window.innerWidth;
 
     if(width > 768) {
-        return document.querySelectorAll('.menu a[href^="#"]');
+        return document.querySelectorAll('.menu a');
     } else {
         return document.querySelectorAll('.list-mobile a[href^="#"]');
     }
@@ -58,7 +58,7 @@ function getScrollTopByHref(element) {
 
 function scrollToIdOnClick(event) {
   event.preventDefault();
-  const to = getScrollTopByHref(event.target) - 80;
+  const to = getScrollTopByHref(event.target) - 70;
   scrollToPosition(to);
 }
 
@@ -100,7 +100,48 @@ function smoothScrollTo(endX, endY, duration) {
     }
     window.scroll(newX, newY);
   }, 1000 / 60); // 60 fps
-};}
+};
+
+// Active Link Desktop
+    const linkDesktop = document.querySelectorAll('.menu a');
+    linkDesktop.forEach(item => {
+        item.addEventListener('click', (e) => {
+            let linkHref = e.target.getAttribute('href');
+            setStyleMenu(linkHref);
+        });
+
+    function setStyleMenu(menu) {
+        let getMenu = document.querySelector(`.menu a[href="${menu}"]`);
+         switch(menu) {
+             case("#banner"):
+                getMenu.style.color = "#f00";
+                document.querySelector('.menu a[href="#portfolio"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#servicos"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#contato"]').style.color = "#fff";
+                break;
+             case("#portfolio"):
+                getMenu.style.color = "#f00";
+                document.querySelector('.menu a[href="#banner"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#servicos"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#contato"]').style.color = "#fff";
+                break;
+             case("#servicos"):
+                getMenu.style.color = "#f00";
+                document.querySelector('.menu a[href="#banner"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#portfolio"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#contato"]').style.color = "#fff";
+                break;
+             case("#contato"):
+                getMenu.style.color = "#f00";
+                document.querySelector('.menu a[href="#banner"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#portfolio"]').style.color = "#fff";
+                document.querySelector('.menu a[href="#servicos"]').style.color = "#fff";
+                break;
+         }
+    }
+    });
+    // -------------------------End On Load-------------------------
+}
 
 
 // Banner
@@ -114,6 +155,7 @@ window.addEventListener('resize', function() {
         banner.style.backgroundImage = "none";
     }
 });
+
 
 // Contato via Whatsapp
 const btnEnviar = document.querySelector('#btn-enviar');
